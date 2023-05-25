@@ -8,7 +8,7 @@ import { getAnalytics } from "firebase/analytics";
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBhTx_jyQ9XXDXbwN_8G3StDaWk8ixpOrU",
-  authDomain: "mywendding.firebaseapp.com",
+  authDomain: "mywendding.web.app",
   projectId: "mywendding",
   storageBucket: "mywendding.appspot.com",
   messagingSenderId: "297404197510",

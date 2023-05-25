@@ -7,7 +7,7 @@
     align-content: center;
     
     background-color: #8c3f0d;
-    box-shadow: 38px 38px 112px 0px rgba(0,0,0,0.75);
+    box-shadow: 38px 38px 112px 0px rgba(255, 255, 255, 0.368);
 
     margin: 30px;
     width: 115px;
@@ -54,15 +54,5 @@
 @keyframes in {
     0%{
         transform: translateY(-100px);
-    }
-}
-
-@keyframes color {
-    0%{
-        background:   linear-gradient(135deg, rgba(2,2,69,1) 0%, rgba(47,41,227,1) 50%, rgba(0,32,36,1) 100%);
-        transform: translateY(-100px);
-    }
-    100%{
-        background:  linear-gradient(135deg, rgba(2,2,69,1) 0%, rgba(47,41,227,1) 50%, rgba(0,32,36,1) 100%);
     }
 }

@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,300&display=swap');
+:root{
+    --primaryFont: 'Cookie';
+    --secundaryFont : 'Zilla Slab', serif;
+    --thirdFont: 'Dancing Script'
+}
+
 .text{
     display: inline-flex;
     flex-wrap: wrap;
@@ -21,7 +28,7 @@
     
     color: white;
     font-size: 40px;
-    font-family: 'Cookie';
+    font-family: var(--primaryFont);
     font-weight: bold;
     
     transition: 2s;
@@ -38,7 +45,7 @@
     bottom: 5px;
     
     font-size: 25px;
-    font-family: 'Cookie';
+    font-family: var(--primaryFont);
     justify-content: center;
     color: white;
 }
@@ -49,11 +56,11 @@
     position: relative;
     width: 100%;
     
-    color: white;
-    text-shadow: 0.1em 0.1em 0.2em black; 
+    color: rgba(50,93,65,1);
+    text-shadow: 0.1em 0.1em 0.2em rgb(255, 255, 255); 
     
     font-size: 50px;
-    font-family: 'Cookie' ;
+    font-family: var(--primaryFont) ;
     justify-content: center;
 }
 
@@ -85,13 +92,14 @@
     display: flex;
     flex-wrap: wrap;
     font-size: 30px;
-    font-family: 'Dancing Script';
+    color: rgba(50,93,65,1);
+    font-family: var(--secundaryFont);
 }
 
 .date{
     display: block;
     position: relative;
-
+    font-family: var(--primaryFont);
     font-size: 60px;
 
     animation: none;
@@ -99,13 +107,10 @@
 }
 
 .text:hover, .nameBox:hover{
-    font-size: 0px;
-    width: 0px;
+    color: rgba(255, 255, 255, 0);
+    background: rgba(255, 255, 255, 0);
 
 }
-
-
-
 
 
 /* -----------------MEDIA QUERYS------------------ */
@@ -142,11 +147,11 @@
 
 @keyframes color {
     0%{
-        background:   linear-gradient(135deg, rgba(2,2,69,1) 0%, rgba(47,41,227,1) 50%, rgba(0,32,36,1) 100%);
+        background:  white;
         transform: translateY(-100px);
     }
-    100%{
-        background:  linear-gradient(135deg, rgba(2,2,69,1) 0%, rgba(47,41,227,1) 50%, rgba(0,32,36,1) 100%);
+    90%{
+        background:  rgba(50,93,65,1);
     }
 }
 
