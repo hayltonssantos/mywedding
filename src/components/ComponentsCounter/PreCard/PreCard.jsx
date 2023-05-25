@@ -33,7 +33,7 @@ export default function PreCard(props) {
           backgroundSize: 'cover',
           transition: '2s',
           zIndex: '4',
-          width: '150px'
+          width: '130px'
       } : {}}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
