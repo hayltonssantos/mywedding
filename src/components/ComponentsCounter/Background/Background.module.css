@@ -1,0 +1,42 @@
+.background{
+    position: relative;
+
+}
+
+.flowers{
+    position: absolute;
+
+    top:-7rem;
+    left: -10rem;
+
+    min-width: 20em;
+    min-height: 20em;   
+
+    max-width: 25em;
+    max-height: 25em;
+    
+}
+
+.wheat{
+    position: fixed;
+    bottom: -10rem;
+    right: -7rem;
+
+    min-width: 20em;
+    min-height: 20em;   
+
+    max-width: 25em;
+    max-height: 25em;
+}
+
+.details{
+    position: fixed;
+    bottom: -10rem;
+    left: -8rem;
+
+    min-width: 20em;
+    min-height: 20em;   
+
+    max-width: 25em;
+    max-height: 25em;
+}
