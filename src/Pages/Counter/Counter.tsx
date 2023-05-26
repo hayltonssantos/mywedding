@@ -7,7 +7,7 @@ function Counter() {
   return (
     <div className="App">
       <Background/>
-      <Container/>
+      <Container enableTop={undefined} enableMiddle={undefined} enableBottom={undefined}/>
     </div>
   );
 }

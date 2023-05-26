@@ -89,7 +89,7 @@
 }
 
 .textDate{
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     font-size: 30px;
     color: rgba(50,93,65,1);
