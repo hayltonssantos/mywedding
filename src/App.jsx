@@ -4,8 +4,9 @@ import { UserProvider } from './context/user'
 import styles from './App.module.css'
 import Counter from '../src/Pages/Counter/Counter'
 import RingLoader from 'react-spinners/RingLoader'
-import Admin from './Pages/admin/Admin'
+import Admin from './Pages/Admin/Admin'
 import Login from './Pages/Login/Login'
+import Guests from './Pages/Guests/Guests'
 import ProtectedRoutes from './Pages/protectedroutes'
 
 function App() {
@@ -51,12 +52,17 @@ function App() {
       <UserProvider>
         <BrowserRouter>
           <Routes>
-            <Route path='/counter' element={<Counter/>}/>
-            <Route path='*' element={<Counter/>}/>
-            <Route path='/login' element={<Login/>}/>
+            <Route path='counter' element={<Counter/>}/>
+            <Route path='login' element={<Login/>}/>
+            
+            
             <Route element={<ProtectedRoutes />}>
-              <Route path='/admin' element={<Admin/>}/>
+              <Route path='guests' element={<Guests/>}/>
+              <Route path='admin' element={<Admin/>}/>
             </Route>
+
+
+            <Route path='*' element={<Counter/>}/>
           </Routes>
         </BrowserRouter>
       </UserProvider>

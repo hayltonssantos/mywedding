@@ -4,7 +4,6 @@ import {
     getAuth,
     signInWithEmailAndPassword,
     signOut as signOutFirebase,
-    createUserWithEmailAndPassword,
     onAuthStateChanged
 } from 'firebase/auth';
 
@@ -13,7 +12,7 @@ const UserContext = createContext({})
 const UserProvider = ({ children }) => {
 
     const auth = getAuth();
-    const [couldLogin] = useState(true)
+    const [couldLogin] = useState(false)
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [err, setErr] = useState('')
@@ -30,10 +29,10 @@ const UserProvider = ({ children }) => {
 
 
 
-    const signIn = (email, password) => {
+    const signIn = async (email, password) => {
         /* console.log('xxx', email, password) */
         setLoading(true)
-        signInWithEmailAndPassword(auth, email, password).then((/* userCredential */) => {
+        await signInWithEmailAndPassword(auth, email, password).then((/* userCredential */) => {
 
 
         }).catch((/* error */) => {

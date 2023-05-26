@@ -8,7 +8,7 @@ import Background from '../../components/ComponentsCounter/Background/Background
 
 export default function Login() {
 
-  const { user, signIn } = useContext(UserContext)
+  const { user, signIn, err } = useContext(UserContext)
   const navigate = useNavigate();
 
   const [email, setEmail] = useState();
@@ -20,14 +20,20 @@ export default function Login() {
   }, [user])
   
   const handleSingIn = async (email, password) => {
-      signIn(email, password)
+      await signIn(email, password)
   }
-
+  const wrong = () =>{ if (err) {
+    return <p>Wrong email or password</p>
+    
+  }}
   return (
     <div className='App'>
       <Background/>
       <div className={styles.containerMid} >
         <Container enableTop={true} enableMiddle={false} enableBottom={false}/>
+        <p className={styles.title}>
+            <p className={styles.title}>{wrong()}</p>
+        </p>
         <div className={styles.containerLogin}>
           <Input type={'text'} onChange={setEmail} placeholder={'Email'} />
           <Input type={'password'} onChange={setPassword} placeholder={'Password'} />

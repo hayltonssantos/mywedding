@@ -6,8 +6,9 @@ import React from "react"
 const ProtectedRoutes = () => {
 
     const { user } = useContext(UserContext)
+    console.log(user)
 
-    return user ? <Outlet /> : <Navigate to="/login" />
+    return user ? <Outlet /> : <Navigate to="/counter" />
 }
 
 export default ProtectedRoutes

@@ -12,35 +12,6 @@
 
 }
 
-
-.form{
-    background: linear-gradient(135deg, rgb(125, 30, 189) 0%, rgb(169, 44, 226) 44%, rgba(54,3,74,1) 100%);
-    animation: change 3s infinite ease-in-out;
-    background-size: 200% 200%;
-
-    color: aliceblue;
-
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    
-    min-width: 50%;
-    height: 500px;
-    margin: auto;
-
-    border-radius: 50px;
-
-    -webkit-box-shadow: 10px 10px 70px 3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 70px 3px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 70px 3px rgba(0,0,0,0.75);
-    
-}
-
 button{
     margin: 10px;
     margin-top: 30px;
@@ -48,14 +19,14 @@ button{
     padding: 0.7em 1.7em;
     font-size: 18px;
     border-radius: 0.5em;
-    background: #5e0978;
-    border: 1px solid #5e0978;
+    background: #8c3f0d;
+    border: 1px solid #8c3f0d;
     transition:  all .3s;
-    box-shadow: 3px 3px 6px #ba0dc3, -3px -3px 6px #4d013f;
+    box-shadow: 3px 3px 6px #dc5e0a, -3px -3px 6px #ea8e50;
 }
 
 button:hover{
-    box-shadow: -3px -3px 6px #ba0dc3, 6px 6px 6px #4d013f
+    box-shadow: 3px 3px 6px #783203, -3px -3px 6px #d75c0a;
 }
 
 @keyframes change{

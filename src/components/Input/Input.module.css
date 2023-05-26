@@ -1,13 +1,17 @@
  input{
         
     margin: 10px;
-    font-size: 15px;
+    font-size: 20px;
 
-    background-color: rgba(240, 248, 255, 0);
-    color: white;
+    color: black;
+
+    border-radius: 10px;
+
+    padding: 5px;
+    padding-left: 10px;
 
     width: 70%;
-    height: 5%;
+    height: 50%;
 
     border: none;
     border-bottom: 3px solid rgb(255, 255, 255);
@@ -18,22 +22,30 @@
 
 input:focus {
     border: none;
-    transition: 1s;
-    animation: in 1s infinite;
+    transition: 2s;
+    animation: changeSize 1s, in 1s infinite;
+    width: 80%;
 }
 
+
+
 input::placeholder{
-    color: white;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 @keyframes in {
     0%{
         border-bottom: 2px solid rgb(0, 255, 110);
-        width: 80%;
     }
     100%{
         border-bottom: 2px solid rgb(0, 0, 0);
+    }
+} 
+@keyframes changeSize {
+    0%{
+        width: 70%
+    }
+    100%{
         width: 80%;
     }
 } 
