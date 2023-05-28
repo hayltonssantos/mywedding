@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Routes, BrowserRouter } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom'
 import { UserProvider } from './context/user'
 import styles from './App.module.css'
 import Counter from '../src/Pages/Counter/Counter'
@@ -62,7 +62,7 @@ function App() {
             </Route>
 
 
-            <Route path='*' element={<Counter/>}/>
+            <Route path='/' element={<Navigate to={'/counter'}/>}/>
           </Routes>
         </BrowserRouter>
       </UserProvider>

@@ -6,6 +6,7 @@ import styles from './Admin.module.css'
 import { UserContext } from '../../context/user';
 
 import { BiLogOut } from "react-icons/bi";
+import { FcInvite } from "react-icons/fc";
 
 
 function Admin() {
@@ -21,8 +22,8 @@ function Admin() {
           <BiLogOut style={{color: 'white', fontSize: '100px'}}></BiLogOut>
         </Button>
 
-        <Button link={'/guests'}>
-
+        <Button link={'guests'} navigate='/guests' text={'Guests'}>
+          <FcInvite style={{color: 'white', fontSize: '100px'}}/>
         </Button>
         <Button/>
       </div>

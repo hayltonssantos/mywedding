@@ -14,13 +14,13 @@ export default function Login() {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
-
   useEffect(() => {
-      if (user) navigate("/admin")
+      if (user) navigate(window.history.back())
   }, [user])
   
-  const handleSingIn = async (email, password) => {
-      await signIn(email, password)
+  const handleSingIn = (email, password) => {
+    signIn(email, password)
+
   }
   const wrong = () =>{ if (err) {
     return <p>Wrong email or password</p>
@@ -31,9 +31,7 @@ export default function Login() {
       <Background/>
       <div className={styles.containerMid} >
         <Container enableTop={true} enableMiddle={false} enableBottom={false}/>
-        <p className={styles.title}>
-            <p className={styles.title}>{wrong()}</p>
-        </p>
+        
         <div className={styles.containerLogin}>
           <Input type={'text'} onChange={setEmail} placeholder={'Email'} />
           <Input type={'password'} onChange={setPassword} placeholder={'Password'} />
