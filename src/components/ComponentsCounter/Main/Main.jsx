@@ -9,7 +9,8 @@ import {FaMapPin } from "react-icons/fa";
 
 export default function Text(
                               {enableTop = true, 
-                                enableMiddle = true, 
+                                enableMiddle = true,
+                                enableDate = true, 
                                 enableBottom = true}
   ) {
   const [day, hour, minute, second] = useCountdown('2024-10-21')
@@ -57,7 +58,6 @@ export default function Text(
           <Display style='text' text={second}/>
           <Display style='nameBox' text='Seconds'/>
         </PreCard>
-        <Display text="22 | Outubro | 17H" style='date'></Display>
       </>
 
     ) : ('')
@@ -96,14 +96,24 @@ export default function Text(
     ) : ('')
   }
 
+  const date = (enable) => {
+    return enable ?
+      (
+      <>
+        <Display text="22 | Outubro | 17H" style='date'></Display>
+      </>
+      ) : ('')
+  }
+
 
   return ( 
   <>
     <div className={styles.wrap}>
       {top(enableTop)}
       {middle(enableMiddle)}
+      {date(enableDate)}
       {bottom(enableBottom)}
-  </div>
+    </div>
   
 
   </>

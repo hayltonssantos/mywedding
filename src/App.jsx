@@ -55,12 +55,10 @@ function App() {
             <Route path='counter' element={<Counter/>}/>
             <Route path='login' element={<Login/>}/>
             
-            
             <Route element={<ProtectedRoutes />}>
-              <Route path='guests' element={<Guests/>}/>
+              <Route path='guests' element={<Counter/>}/>
               <Route path='admin' element={<Admin/>}/>
             </Route>
-
 
             <Route path='/' element={<Navigate to={'/counter'}/>}/>
           </Routes>

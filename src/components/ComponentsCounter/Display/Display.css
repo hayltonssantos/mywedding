@@ -107,8 +107,8 @@
 }
 
 .text:hover, .nameBox:hover{
-    color: rgba(255, 255, 255, 0);
-    background: rgba(255, 255, 255, 0);
+    visibility: hidden;
+    opacity: 0;
 
 }
 
