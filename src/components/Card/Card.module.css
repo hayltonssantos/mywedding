@@ -1,0 +1,70 @@
+.card {
+    display: flex;
+    flex-basis: 33.333333%;
+    width: 100%;
+    max-width: 150px;
+    min-width: 100px;
+    height: 80px;
+    background-color: #292929;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .card .title, .counter {
+    width: 100%;
+    margin: 0;
+    text-align: start;
+    margin-top: 0;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.6rem;
+  }
+  
+  .card .text {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 2px;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* .card:hover {
+    height: 230px;
+  }
+  
+  .card:hover .text {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
+  }
+  
+  .card:hover .icon {
+    background-position: -120px;
+    transition: all 0.3s ease;
+  }
+  
+  .card:hover .icon svg path {
+    fill: url('#gradientColor');
+    transition: all 0.3s ease;
+  } */

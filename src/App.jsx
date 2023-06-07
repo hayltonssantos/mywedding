@@ -56,7 +56,7 @@ function App() {
             <Route path='login' element={<Login/>}/>
             
             <Route element={<ProtectedRoutes />}>
-              <Route path='guests' element={<Counter/>}/>
+              <Route path='guests' element={<Guests/>}/>
               <Route path='admin' element={<Admin/>}/>
             </Route>
 

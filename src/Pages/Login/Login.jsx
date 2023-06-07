@@ -33,6 +33,7 @@ export default function Login() {
         <Container enableTop={true} enableMiddle={false} enableBottom={false}/>
         
         <div className={styles.containerLogin}>
+          <span>{wrong(err)}</span>
           <Input type={'text'} onChange={setEmail} placeholder={'Email'} />
           <Input type={'password'} onChange={setPassword} placeholder={'Password'} />
         </div>
