@@ -5,7 +5,7 @@ import style from './GuestsInvited.module.css'
 export default function GuestsInvited({name = 'null', status = 'black'}) {
    const getColorForStatus = (status) =>{
     switch (status){ 
-        case 'confirmed': return 'green'
+        case 'confirmed': return 'lightGreen'
         case 'unconfirmed': return 'red'
         case 'maybe': return 'yellow'
     }

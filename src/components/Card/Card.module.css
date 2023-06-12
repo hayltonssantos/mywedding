@@ -2,10 +2,10 @@
     display: flex;
     flex-basis: 33.333333%;
     width: 100%;
-    max-width: 150px;
+    max-width: 200px;
     min-width: 100px;
     height: 80px;
-    background-color: #292929;
+    background-color: #2a3a30;
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
@@ -14,7 +14,7 @@
     transition: all 0.3s ease;
     position: relative;
     display: flex;
-    justify-content: start;
+    justify-content: end;
     align-items: start;
     flex-direction: column;
     cursor: pointer;
@@ -49,10 +49,10 @@
     transition: all 0.3s ease;
   }
   
-  /* .card:hover {
-    height: 230px;
+  .card:hover {
+    background-color: #325d41;
   }
-  
+  /*
   .card:hover .text {
     transition: all 0.3s ease;
     opacity: 1;
