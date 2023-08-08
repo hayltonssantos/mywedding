@@ -7,6 +7,7 @@ import RingLoader from 'react-spinners/RingLoader'
 import Admin from './Pages/Admin/Admin'
 import Login from './Pages/Login/Login'
 import Guests from './Pages/Guests/Guests'
+import AddGuests from './Pages/AddGuests/AddGuests'
 import ProtectedRoutes from './Pages/protectedroutes'
 
 function App() {
@@ -58,6 +59,7 @@ function App() {
             <Route element={<ProtectedRoutes />}>
               <Route path='guests' element={<Guests/>}/>
               <Route path='admin' element={<Admin/>}/>
+              <Route path='addguests' element={<AddGuests/>}/>
             </Route>
 
             <Route path='/' element={<Navigate to={'/counter'}/>}/>
