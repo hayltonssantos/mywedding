@@ -9,23 +9,20 @@ function Dropdownn() {
       'type': 'Child'
     },
     {'id': 2,
-      'type': 'Confirmed'
+      'type': 'Adult'
     },
-    {'id': 3,
-      'type': 'Unconfirmed'
-    }
   ]
   return (
-    <>
+    <div>
     
-    <label for="ages">Faixa Etaria</label>
+    <label for="ages">Age </label>
 
     <select name="ages" id="ages">
       {Ages.map((age) => (
         <option value={age.type}>{age.type}</option>
       ))}
     </select>
-    </>
+    </div>
   );
 }
 

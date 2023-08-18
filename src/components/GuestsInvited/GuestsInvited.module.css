@@ -1,11 +1,28 @@
-.container{
-    background-color: aquamarine;
+.container, .info{
+    background-color: rgb(250, 200, 157);
     display: flex;
     flex-wrap: wrap;
-    padding: 3px;
+    padding: 1px;
+    margin: 3px 3px;
+    border-radius: 5px;
+    justify-content: space-between;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 1000;
 }
 
-.name{
+.name, .trash{
     padding-left: 5px ;
     font-size: 1.1em;
+    padding-top: 5px;
+}
+
+.trash{
+    text-align: right;
+    margin-right: 10px;
+}
+
+.icon{
+    background-color: black;
+    width: 100%;
+
 }

@@ -82,7 +82,7 @@ function getInformation(group){
           </Card>
         </section>
         <section className={styles.peoplesInviteds}>
-          {inviteds.map((invited) => <GuestsInvited key={invited.name} name={invited.name} status={invited.status}/>)}
+          {inviteds.map((invited) => <GuestsInvited key={invited.name} name={invited.name} status={invited.status} age={invited.ageGroup}/>)}
         </section>
       </div>
     </div>
