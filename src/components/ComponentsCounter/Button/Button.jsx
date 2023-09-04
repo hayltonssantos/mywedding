@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Button.module.css'
 import {Navigate, Link} from 'react-router-dom'
 
-export default function Button({text, link, children, action, target = '_blank', navigate = '' }) {
+export default function Button({text = 'null', link = 'null', children, action, target = '_blank', navigate = '' }) {
   if (navigate === '') {
     return (
       <div className={styles.containerButton}>

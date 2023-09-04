@@ -2,7 +2,7 @@ import { Button, Dropdown } from 'react-bootstrap'
 import DropdownMenu from 'react-bootstrap/esm/DropdownMenu'
 import DropdownItem from 'react-bootstrap/esm/DropdownItem'
 import DropdownToggle from 'react-bootstrap/esm/DropdownToggle'
-
+import styles from './Dropdown.module.css'
 function Dropdownn() {
   const Ages = [
     {'id': 0,
@@ -17,7 +17,7 @@ function Dropdownn() {
     
     <label for="ages">Age </label>
 
-    <select name="ages" id="ages">
+    <select className={styles.age} name="ages" id="ages">
       {Ages.map((age) => (
         <option value={age.type}>{age.type}</option>
       ))}

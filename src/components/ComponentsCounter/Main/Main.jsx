@@ -14,7 +14,9 @@ export default function Text(
                                 enableBottom = true}
   ) {
   const [day, hour, minute, second] = useCountdown('2024-06-14')
-  const link = "https://api.whatsapp.com/send/?phone=5521976618713&text=Ol%C3%A1%2C+confirmo+minha+presen%C3%A7a+na+Festa+da+Jennyni.+Dia+02+de+Junho%2C+%C3%A0s+21h.+Nome+Completo%3A&type=phone_number&app_absent=0"
+  /* const link = "https://api.whatsapp.com/send/?phone=5521976618713&text=Ol%C3%A1%2C+confirmo+minha+presen%C3%A7a+na+Festa+da+Jennyni.+Dia+02+de+Junho%2C+%C3%A0s+21h.+Nome+Completo%3A&type=phone_number&app_absent=0"
+   */
+  const link = "/confirm"
   const sug = 'https://drive.google.com/file/d/1mi5u9Q6fc5w_nuhlMWDqVDRjNHy87mhs/view?usp=sharing'
   const mapa = 'https://goo.gl/maps/S2ykJjg2UxoPWTmd8'
 
@@ -84,7 +86,7 @@ export default function Text(
         <Button link={mapa} text='Local' style='nameBox'>
             <FaMapPin style={{color: 'white', fontSize: '50px'}}/>
         </Button>
-        <Button link={link} text='Confirmar Presença' style='nameBox'>
+        <Button link={link} text='Confirmar Presença' style='nameBox' target='_self'>
             <GiConfirmed style={{color: 'white', fontSize: '50px'}}/>
         </Button>
         <Button link={sug} text='Sugestão de presente' style='nameBox'>

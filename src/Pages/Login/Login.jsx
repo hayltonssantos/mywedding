@@ -38,7 +38,7 @@ export default function Login() {
           <Input type={'password'} onChange={setPassword} placeholder={'Password'} />
         </div>
         <div className={styles.buttons}>    
-            <button 
+            <button className={styles.button}
                 onClick={() => {handleSingIn(email, password)}}>
                 Login
             </button>

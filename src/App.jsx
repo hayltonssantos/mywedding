@@ -9,6 +9,9 @@ import Login from './Pages/Login/Login'
 import Guests from './Pages/Guests/Guests'
 import AddGuests from './Pages/AddGuests/AddGuests'
 import ProtectedRoutes from './Pages/protectedroutes'
+import Ourdate from './Pages/Ourdate/Ourdate'
+import Confirm from './Pages/Confirm/Confirm'
+import {InvitedProvider} from './context/invited'
 
 function App() {
 
@@ -50,22 +53,26 @@ function App() {
       </> 
     ) : (
     <>
-      <UserProvider>
+      <InvitedProvider>
+    <UserProvider>
         <BrowserRouter>
           <Routes>
             <Route path='counter' element={<Counter/>}/>
             <Route path='login' element={<Login/>}/>
+            <Route path='confirm' element={<Confirm/>}/>
             
             <Route element={<ProtectedRoutes />}>
               <Route path='guests' element={<Guests/>}/>
               <Route path='admin' element={<Admin/>}/>
               <Route path='addguests' element={<AddGuests/>}/>
+              <Route path='ourdate' element={<Ourdate/>}/>
             </Route>
 
             <Route path='/' element={<Navigate to={'/counter'}/>}/>
           </Routes>
         </BrowserRouter>
-      </UserProvider>
+    </UserProvider>
+      </InvitedProvider>
     </>
   )
 }

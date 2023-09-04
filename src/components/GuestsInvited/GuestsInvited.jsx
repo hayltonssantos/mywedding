@@ -3,7 +3,7 @@ import {CgLoadbar} from 'react-icons/cg'
 import {BsFillTrashFill} from 'react-icons/bs'
 import style from './GuestsInvited.module.css'
 
-export default function GuestsInvited({name = 'null', status = 'black', age}) { 
+export default function GuestsInvited({name = 'null', lastName = 'null', status = 'black', age}) { 
   const getColorForStatus = (status) =>{
     switch (status){ 
         case 'confirmed': return 'green'
@@ -19,7 +19,7 @@ export default function GuestsInvited({name = 'null', status = 'black', age}) {
             <CgLoadbar style={{color:getColorForStatus(status) ,fontSize: '35px'}}/>
         </span>
         <span className={style.name}> 
-          {name} 
+          {name} {lastName} 
         </span>
       </div>
         <div className={style.trash}>

@@ -6,34 +6,40 @@ import GuestsInvited from '../../components/GuestsInvited/GuestsInvited'
 import {BsFillPeopleFill, BsFillPersonFill, BsFillCircleFill} from 'react-icons/bs'
 import {MdChildFriendly} from 'react-icons/md'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
+import firebaseApp from '../../../services/firebase'
+import { getFirestore,addDoc, collection, onSnapshot, query } from 'firebase/firestore'
+
 
 export default function Guests() {
   const [day, hour, minute, second] = useCountdown('2024-10-21')
+  const [invited, setInvited] = useState("")
+  const [inviteds, setInviteds] = useState([])
   
-  const inviteds = [
+
+/*   const inviteds = [
     {
         name: 'Haylton Santos',
         status: 'confirmed',
-        ageGroup: 'adult'
+        age: 'adult'
 
     },
     {
         name: 'Jennyni Alves',
         status: 'unconfirmed',
-        ageGroup: 'child'
+        age: 'child'
     },
     {
         name: 'Elisabeth Souza',
         status: 'maybe',
-        ageGroup: 'adult'
+        age: 'adult'
     },
     {
         name: 'Camile Manzoli',
         status: 'unconfirmed',
-        ageGroup: 'adult'
+        age: 'adult'
     },
 
-] 
+] */ 
 
 function getInformation(group){
   let adult = 0
@@ -42,8 +48,8 @@ function getInformation(group){
   let unconfirmed = 0
   let maybe = 0
   inviteds.map((invited) =>{
-    if (invited.ageGroup === 'adult') adult = adult + 1
-    if (invited.ageGroup === 'child') child = child + 1
+    if (invited.age === 'adult') adult = adult + 1
+    if (invited.age === 'child') child = child + 1
     if (invited.status === 'confirmed') confirmed = confirmed + 1
     if (invited.status === 'unconfirmed') unconfirmed = unconfirmed + 1
     if (invited.status === 'maybe') maybe = maybe + 1
@@ -54,7 +60,26 @@ function getInformation(group){
   if (group === 'unconfirmed') return unconfirmed + maybe
 }
   
-  
+  useEffect(()=>{
+    const q = query(collection(db,'inviteds'))
+
+    onSnapshot(q,(querySnapshot)=>{
+      const aux = []
+      querySnapshot.forEach((doc)=>{
+        console.log(doc.id, doc.data)
+
+        aux.push({
+          id:doc.id,
+          ...doc.data()
+        })
+
+      })
+      setInviteds([...aux])
+    })
+  }, [])
+
+  const db = getFirestore(firebaseApp)
+
   return (
     <div className='App'>
       <header className={styles.header}>
@@ -71,7 +96,7 @@ function getInformation(group){
           <Card title={getInformation('child')} text={'Crianças'}>
             <MdChildFriendly style={{color: 'white', fontSize: '15px'}}/>
           </Card>
-          <Card cursor={'pointer'} color={'#8c3f0d'} title={'Adicionar Convidados'} text={''}>
+          <Card link={'/addguests'} cursor={'pointer'} color={'#8c3f0d'} title={'Adicionar Convidados'} text={''}>
             <AiOutlinePlusCircle style={{color: 'white', fontSize: '15px'}}/>
           </Card>
           <Card title={getInformation('confirmed')} text={'Confirmados'}>
@@ -82,7 +107,7 @@ function getInformation(group){
           </Card>
         </section>
         <section className={styles.peoplesInviteds}>
-          {inviteds.map((invited) => <GuestsInvited key={invited.name} name={invited.name} status={invited.status} age={invited.ageGroup}/>)}
+         { inviteds.map((invited) => <GuestsInvited key={invited.name} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>)}
         </section>
       </div>
     </div>

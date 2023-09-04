@@ -1,17 +1,19 @@
 .background{
     position: relative;
+    z-index: 0;
 
 }
 
 .flowers{
     position: absolute;
 
+    z-index: 1;
     top:-7rem;
     left: -10rem;
 
     min-width: 20em;
     min-height: 20em;   
-
+    
     max-width: 25em;
     max-height: 25em;
     
@@ -21,10 +23,11 @@
     position: fixed;
     bottom: -10rem;
     right: -7rem;
-
+    z-index: 1;
+    
     min-width: 20em;
     min-height: 20em;   
-
+    
     max-width: 25em;
     max-height: 25em;
 }
@@ -33,6 +36,7 @@
     position: fixed;
     bottom: -10rem;
     left: -8rem;
+    z-index: 1;
 
     min-width: 20em;
     min-height: 20em;   
@@ -40,3 +44,12 @@
     max-width: 25em;
     max-height: 25em;
 }
+
+@media only screen and (max-width: 600px) {
+    .details{
+        display: none;
+    }
+    .wheat{
+        display: none;
+    }
+  }
