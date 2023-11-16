@@ -1,6 +1,5 @@
-import { createContext, useState } from "react";
-import { useNavigate } from 'react-router-dom';
-import { getFirestore,addDoc, collection, onSnapshot, query, updateDoc, setDoc, doc } from 'firebase/firestore'
+import { createContext, useMemo, useState } from "react";
+import { getFirestore, updateDoc, setDoc, doc, deleteDoc } from 'firebase/firestore'
 import firebaseApp from '../../services/firebase'
 
 const InvitedContext = createContext({})
@@ -12,29 +11,27 @@ const InvitedProvider = ({children}) =>{
   const [age, setAge] = useState("")
   const db = getFirestore(firebaseApp)
 
-  /* const navigate = useNavigate() */
-
   const addGuest = async function(cod = "1", name,lastName,age = '', status){
-    console.log(cod, name,lastName,age,status)
+    
     const id = `${name.toLowerCase()}${lastName.toLowerCase()}`
-    if (cod === '0'){
-      /* navigate("/guests") */
-    }
+    const idWSpaces = id.split(" ").join("")
+    console.log(idWSpaces)
 
     const invited_json = {
-      name, 
-      lastName,
+      name: name.split(" ").join(""), 
+      lastName: lastName.split(" ").join(""),
       age,
       status
     }
-    await setDoc(doc(db,`inviteds/${id}`),invited_json)
-    await updateDoc(doc(db,`inviteds/${id}`),invited_json)
+    await setDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
+    await updateDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
     /* await addDoc(collection(db,'inviteds'), invited_json) */
   }
-
+  
   const confirmGuest = async function(name,lastName,status){
     const id = `${name.toLowerCase()}${lastName.toLowerCase()}`
-    
+    const idWSpaces = id.split(" ").join("")
+
     if (status.toLowerCase() === 'confirmado'){
         status = 'confirmed'
     }
@@ -43,16 +40,32 @@ const InvitedProvider = ({children}) =>{
     }
     
     const invited_json = {
-      name, 
-      lastName,
-      status,
+      name: name.split(" ").join(""), 
+      lastName: lastName.split(" ").join(""),
+      age,
+      status
     }
-    await updateDoc(doc(db,`inviteds/${id}`),invited_json)
+    await updateDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
     /* await addDoc(collection(db,'inviteds'), invited_json) */
+  }
+    
+  const deleteGuest = async function (name, lastName){
+    const key = (`${name.toLowerCase()}${lastName.toLowerCase()}`)
+    const database = 'inviteds'
+    const docRef = doc(db, database, key)
+
+    deleteDoc(docRef)
+      .then(() => {
+          console.log("Entire Document has been deleted successfully.")
+      })
+      .catch(error => {
+          console.log(error);
+      })
+
   }
 
     return (
-        <InvitedContext.Provider value={{name, addGuest, confirmGuest}}>
+        <InvitedContext.Provider value={{name, addGuest, confirmGuest, deleteGuest}}>
             {children}
         </InvitedContext.Provider>
     )

@@ -1,17 +1,25 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {CgLoadbar} from 'react-icons/cg'
-import {BsFillTrashFill} from 'react-icons/bs'
+import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs'
 import style from './GuestsInvited.module.css'
+import { InvitedContext } from '../../context/invited'
+import { useNavigate } from 'react-router-dom'
 
 export default function GuestsInvited({name = 'null', lastName = 'null', status = 'black', age}) { 
+  const {deleteGuest} = useContext(InvitedContext)
+  const navigate = useNavigate();
+
   const getColorForStatus = (status) =>{
     switch (status){ 
         case 'confirmed': return 'green'
         case 'unconfirmed': return 'red'
         case 'maybe': return 'darkOrange'
     }
-
    }  
+  
+  const editGuestInv = (name, lastName, age, status) =>{
+    navigate(`/addguests`)
+  }
   return (
     <div className={style.container}>
       <div className={style.info}>
@@ -19,12 +27,15 @@ export default function GuestsInvited({name = 'null', lastName = 'null', status 
             <CgLoadbar style={{color:getColorForStatus(status) ,fontSize: '35px'}}/>
         </span>
         <span className={style.name}> 
-          {name} {lastName} 
+          {name} {lastName}
         </span>
       </div>
         <div className={style.trash}>
-          <span className={style.trash}>
-            <BsFillTrashFill style={{color:'black' ,fontSize: '15px'}}/>
+          <span onClick={(e) => editGuestInv(name, lastName)} className={style.trash}>
+            <BsFillPencilFill  style={{color:'black' ,fontSize: '15px'}}/>
+          </span>
+          <span onClick={(e) => deleteGuest(name, lastName)} className={style.trash}>
+            <BsFillTrashFill  style={{color:'black' ,fontSize: '15px'}}/>
           </span>
         </div>
     </div>

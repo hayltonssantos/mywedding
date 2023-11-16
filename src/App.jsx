@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Route, Routes, BrowserRouter, Navigate } from 'react-router-dom'
+import { Route, Routes, BrowserRouter, Navigate, Link } from 'react-router-dom'
 import { UserProvider } from './context/user'
 import styles from './App.module.css'
 import Counter from '../src/Pages/Counter/Counter'
@@ -12,6 +12,10 @@ import ProtectedRoutes from './Pages/protectedroutes'
 import Ourdate from './Pages/Ourdate/Ourdate'
 import Confirm from './Pages/Confirm/Confirm'
 import {InvitedProvider} from './context/invited'
+import TheFirstYear from './Pages/TheFirstYear/TheFirstYear'
+import { QuestionsProvider } from './context/questions'
+import Questions from './Pages/Questions/Questions'
+import { PointProvider } from './context/points'
 
 function App() {
 
@@ -54,24 +58,31 @@ function App() {
     ) : (
     <>
       <InvitedProvider>
-    <UserProvider>
-        <BrowserRouter>
-          <Routes>
-            <Route path='counter' element={<Counter/>}/>
-            <Route path='login' element={<Login/>}/>
-            <Route path='confirm' element={<Confirm/>}/>
-            
-            <Route element={<ProtectedRoutes />}>
-              <Route path='guests' element={<Guests/>}/>
-              <Route path='admin' element={<Admin/>}/>
-              <Route path='addguests' element={<AddGuests/>}/>
-              <Route path='ourdate' element={<Ourdate/>}/>
-            </Route>
+        <PointProvider>
+        <UserProvider>
+          <QuestionsProvider>
+            <BrowserRouter>
+              <Routes>
+                <Route path='counter' element={<Counter/>}/>
+                <Route path='login' element={<Login/>}/>
+                <Route path='confirm' element={<Confirm/>}/>
+                
+                <Route element={<ProtectedRoutes />}>
+                  <Route path='guests' element={<Guests/>}/>
+                  <Route path='admin' element={<Admin/>}/>
+                  <Route path='addguests' element={<AddGuests/>}/>
+                  <Route path='ourdate' element={<Ourdate/>}/>
+                </Route>
+                  <Route path='thefirsty' element={<TheFirstYear/>}/>
+                  <Route path='/questions/:id' element={<Questions/>}/>
 
-            <Route path='/' element={<Navigate to={'/counter'}/>}/>
-          </Routes>
-        </BrowserRouter>
-    </UserProvider>
+                <Route path='/' element={<Navigate to={'/counter'}/>}/>
+                <Route path='*' element={<Navigate to={'/counter'}/>}/>
+              </Routes>
+            </BrowserRouter>
+          </QuestionsProvider>
+        </UserProvider>
+        </PointProvider>
       </InvitedProvider>
     </>
   )

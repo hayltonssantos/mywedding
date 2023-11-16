@@ -8,6 +8,7 @@ import {MdChildFriendly} from 'react-icons/md'
 import {AiOutlinePlusCircle} from 'react-icons/ai'
 import firebaseApp from '../../../services/firebase'
 import { getFirestore,addDoc, collection, onSnapshot, query } from 'firebase/firestore'
+import AlertDiv from '../../components/AlertDiv/AlertDiv'
 
 
 export default function Guests() {
@@ -66,7 +67,7 @@ function getInformation(group){
     onSnapshot(q,(querySnapshot)=>{
       const aux = []
       querySnapshot.forEach((doc)=>{
-        console.log(doc.id, doc.data)
+        /* console.log(doc.id, doc.data) */
 
         aux.push({
           id:doc.id,
@@ -107,7 +108,7 @@ function getInformation(group){
           </Card>
         </section>
         <section className={styles.peoplesInviteds}>
-         { inviteds.map((invited) => <GuestsInvited key={invited.name} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>)}
+         { inviteds.map((invited) => <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>)}
         </section>
       </div>
     </div>

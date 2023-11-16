@@ -1,20 +1,21 @@
-import React, { useEffect, useState, useContext } from 'react'
+import React, {useState, useContext } from 'react'
 import styles from './AddGuests.module.css'
 import Input from '../../components/Input/Input'
-import { useNavigate } from 'react-router-dom';
-import { getFirestore,addDoc, collection, onSnapshot, query, updateDoc, setDoc, doc } from 'firebase/firestore'
+import {useNavigate, useParams } from 'react-router-dom';
+import { getFirestore} from 'firebase/firestore'
 import firebaseApp from '../../../services/firebase'
 import { InvitedContext } from '../../context/invited';
+import AlertDiv from '../../components/AlertDiv/AlertDiv';
 
 export default function AddGuests() {
-  
+ 
+  const {addGuest} = useContext(InvitedContext)
   const [name, setName] = useState()
   const [lastName, setlastName] = useState()
   const [age, setAge] = useState()
   const [status, setStatus] = useState()
   const db = getFirestore(firebaseApp)
-
-  const {addGuest} = useContext(InvitedContext)
+  const navigate = useNavigate();
 
   const Ages = [
     {'id': 0,
@@ -43,9 +44,31 @@ export default function AddGuests() {
     },
   ]
   
+  const [showAlert, setShowAlert] = useState(false);
+
+  const toggleAlert = () => {
+    setShowAlert(!showAlert);
+  };
+  
+  setTimeout(() => {
+    setShowAlert(false);
+  }, 3000);
+
+  const save = (id,name,lastName, age, status) =>{
+    toggleAlert()
+    addGuest(id, name, lastName, age.toLowerCase(), status.toLowerCase())
+    if (id == 0){
+      navigate('/guests')
+    }
+    
+  } 
+
   return (
     <div className='App'>
       <div className={styles.grid}>
+        {showAlert && (
+          <AlertDiv text={'Success'}/>
+        )}
         <header className={styles.header}>
           <h1 className={styles.title}>Add Guests</h1>
         </header>
@@ -76,8 +99,8 @@ export default function AddGuests() {
             </div>
           </div>
         <div>  
-          <button onClick={(e) => addGuest('0', name, lastName, age.toLowerCase(), status.toLowerCase())}>Add</button>
-          <button onClick={(e) => addGuest('1', name, lastName, age.toLowerCase(), status.toLowerCase())}>Add and continue</button>
+          <button onClick={(e) => save('0', name, lastName, age.toLowerCase(), status.toLowerCase())}>Add</button>
+          <button onClick={(e) => save('1', name, lastName, age.toLowerCase(), status.toLowerCase())}>Add and continue</button>
         </div>
       </div>
     </div>

@@ -1,0 +1,56 @@
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+}
+
+.pontos{
+  font-size: 18px;
+  text-align: right;
+  margin: 50px 50px 0 0;
+  box-sizing: margin-box;
+}
+
+.title h2{
+  padding: 10px;
+  text-align: center;
+}
+
+.divButtons{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.questions{
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1em;
+  justify-content: center;
+  margin: auto;
+}
+
+.inputs{
+  display: flex;
+  width: 300px;
+  text-align: center;
+  justify-content: right;
+  align-items: center;
+  padding: 20px 0 20px 0;
+  overflow-wrap: break-word;  
+  word-wrap: break-word; 
+  word-break: break-word;
+}
+
+label{
+  width: 100%;
+}
+
+a{
+  color: wheat;
+  text-decoration: none;
+}
