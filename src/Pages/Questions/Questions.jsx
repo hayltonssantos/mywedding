@@ -1,16 +1,14 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
 import style from './Questions.module.css'
 import Background from '../../components/ComponentsCounter/Background/Background'
 import firebaseApp from '../../../services/firebase'
 import {getFirestore, collection, onSnapshot, query} from 'firebase/firestore'
-import {PointContext} from '../../context/points'
 
 export default function Questions() {
   const {id} = useParams()
   const [page, setPage] = useState(parseInt(id))
   const [questions, setQuestions] = useState([])
-  const {point, getPoint} = useContext(PointContext)
   
   const db = getFirestore(firebaseApp)
 
@@ -60,8 +58,6 @@ export default function Questions() {
   return (
     <>
     <Background/>
-    {()=>attPoint()}
-    <div className={style.pontos}>Pontos: {point}</div>
     <div className={style.main}>
       <div className={style.title}>
         <h2>{questions.map((question)=>question.id)}</h2>
