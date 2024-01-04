@@ -15,7 +15,6 @@ import {InvitedProvider} from './context/invited'
 import TheFirstYear from './Pages/TheFirstYear/TheFirstYear'
 import { QuestionsProvider } from './context/questions'
 import Questions from './Pages/Questions/Questions'
-import { PointProvider } from './context/points'
 
 function App() {
 
@@ -58,7 +57,6 @@ function App() {
     ) : (
     <>
       <InvitedProvider>
-        <PointProvider>
         <UserProvider>
           <QuestionsProvider>
             <BrowserRouter>
@@ -82,7 +80,6 @@ function App() {
             </BrowserRouter>
           </QuestionsProvider>
         </UserProvider>
-        </PointProvider>
       </InvitedProvider>
     </>
   )

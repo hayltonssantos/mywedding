@@ -36,11 +36,11 @@ export default function Questions() {
         )
     }
   }
-
+  
   useEffect(()=>{
     const q = query(collection(db,`questions/1/q${page}`))
 
-    onSnapshot(q,(querySnapshot)=>{
+     onSnapshot(q,(querySnapshot)=>{
       const aux = []
       querySnapshot.forEach((doc)=>{
         /* console.log(doc.id, doc.data) */
@@ -55,6 +55,30 @@ export default function Questions() {
     })
   }, [])
 
+  const quest = function(numb){
+    let numbE = ''
+    if (numb === 1){
+      numbE = questions.map((question)=>question.um)
+    }
+    if (numb === 2){
+      numbE = questions.map((question)=>question.dois)
+    }
+    if (numb === 3){
+      numbE = questions.map((question)=>question.tres)
+    }
+    return(
+      <div className={style.inputs}>
+            <input type='radio' 
+                    id={`${numbE}`}
+                    name={`${numb}`} 
+                    value={`${numb}`}/>
+              <label for={`${numb}`}>
+                <p>{numbE}</p>
+              </label>
+          </div>
+    )
+  }
+
   return (
     <>
     <Background/>
@@ -62,33 +86,9 @@ export default function Questions() {
       <div className={style.title}>
         <h2>{questions.map((question)=>question.id)}</h2>
         <div className={style.questions}>
-          <div className={style.inputs}>
-            <input type='radio' 
-                    id='1' 
-                    name='1' 
-                    value='1'/>
-              <label for='1'>
-                <p>{questions.map((question)=>question.um)}</p>
-              </label>
-          </div>
-          <div className={style.inputs}>
-            <input type='radio' 
-                    id='2' 
-                    name='2' 
-                    value='2'/>
-              <label for='2'>
-                <p>{questions.map((question)=>question.dois)}</p>
-              </label>
-          </div>
-          <div className={style.inputs}>
-            <input type='radio' 
-                    id='3' 
-                    name='3' 
-                    value='3'/>
-              <label for='3'>
-                <p>{questions.map((question)=>question.tres)}</p>
-              </label>
-          </div>
+          {quest(1)}
+          {quest(2)}
+          {quest(3)}
         </div>
       </div>
       <div className={style.divButtons}>
