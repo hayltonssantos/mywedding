@@ -25,12 +25,12 @@ function Confirm() {
  const [name, setName] = useState("")
  const [lastName, setLastName] = useState("")
  const [status, setStatus] = useState("")
- const linkWpp = `https://api.whatsapp.com/send/?phone=351964337343&text=Ol%C3%A1%2C+confirmo+minha+presen%C3%A7a+no+Casamento+de+Camile+e+Haylton.+Dia+14+de+Junho%2C+%C3%A0s+17h.+${name}+${lastName}%3A&type=phone_number&app_absent=0`
+ const linkWpp = `https://api.whatsapp.com/send/?phone=351964337343&text=Ol%C3%A1%2C+confirmo+minha+presen%C3%A7a+no+Casamento+de+Camile+e+Haylton.+Dia+12+de+Outubro%2C+%C3%A0s+15:30h.+${name}+${lastName}%3A&type=phone_number&app_absent=0`
  return (
     <div className="App">
       <div>
         <Background/>
-        <Container enableMiddle={false} enableBottom={false}/>
+        <Container enableMiddle={false} enableBottom={false} color={''}/>
       </div>
       <div>
         <Input type='text' placeholder={"Nome"} onChange={setName}/>
@@ -47,7 +47,7 @@ function Confirm() {
           </div>
       </div>
       <div className={styles.containerButtons}>
-        <Button action={(e) => confirmGuest(name, lastName, status)} link={''} navigate={'#'} text={'Confirm'} target='_self'>
+        <Button action={(e) => confirmGuest(name, lastName, status)} link={linkWpp} navigate={'#counter'} text={'Confirm'} target='_self'>
           <FcInvite style={{color: 'white', fontSize: '100px'}}/>
         </Button>
       </div>

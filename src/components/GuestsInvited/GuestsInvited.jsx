@@ -3,11 +3,12 @@ import {CgLoadbar} from 'react-icons/cg'
 import {BsFillTrashFill, BsFillPencilFill} from 'react-icons/bs'
 import style from './GuestsInvited.module.css'
 import { InvitedContext } from '../../context/invited'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 export default function GuestsInvited({name = 'null', lastName = 'null', status = 'black', age}) { 
   const {deleteGuest} = useContext(InvitedContext)
   const navigate = useNavigate();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const getColorForStatus = (status) =>{
     switch (status){ 
@@ -17,8 +18,10 @@ export default function GuestsInvited({name = 'null', lastName = 'null', status 
     }
    }  
   
-  const editGuestInv = (name, lastName, age, status) =>{
-    navigate(`/addguests`)
+  const editGuestInv = (name, lastName) =>{
+    const searchId = (name+'_'+lastName).toLowerCase()
+    setSearchParams({ q: searchId });
+    navigate(`/addguests?q=${encodeURIComponent(searchId)}`);
   }
   return (
     <div className={style.container}>
@@ -26,7 +29,7 @@ export default function GuestsInvited({name = 'null', lastName = 'null', status 
         <span className={style}>
             <CgLoadbar style={{color:getColorForStatus(status) ,fontSize: '35px'}}/>
         </span>
-        <span className={style.name}> 
+        <span className={style.name} key={name} id={'name'}> 
           {name} {lastName}
         </span>
       </div>

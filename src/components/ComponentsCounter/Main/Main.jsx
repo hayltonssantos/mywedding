@@ -8,12 +8,14 @@ import { GiConfirmed, GiPresent } from "react-icons/gi";
 import {FaMapPin } from "react-icons/fa";
 
 export default function Text(
-                              {enableTop = true, 
+                              {
+                                color,
+                                enableTop = true, 
                                 enableMiddle = true,
                                 enableDate = true, 
                                 enableBottom = true}
   ) {
-  const [day, hour, minute, second] = useCountdown('2024-06-14')
+  const [day, hour, minute, second] = useCountdown('2024-10-12')
   /* const link = "https://api.whatsapp.com/send/?phone=5521976618713&text=Ol%C3%A1%2C+confirmo+minha+presen%C3%A7a+na+Festa+da+Jennyni.+Dia+02+de+Junho%2C+%C3%A0s+21h.+Nome+Completo%3A&type=phone_number&app_absent=0"
    */
   const link = "/confirm"
@@ -30,9 +32,9 @@ export default function Text(
     
     return enable ? (
       <section className={styles.container}>
-        <Display text='Wendding' style='wendding'/>
-        <Display text='Haylton & Camile' style='name'/>
-        <Display text='Save The Date' style='titulo'/>
+        <Display text='Wendding' style='wendding' color={color}/>
+        <Display text='Haylton & Camile' style='name' color={color}/>
+        <Display text='Save The Date' style='titulo' color={color}/>
       </section>
 
     ) : ('')
@@ -102,7 +104,7 @@ export default function Text(
     return enable ?
       (
       <>
-        <Display text="14 | Junho | 17H" style='date'></Display>
+        <Display text="12 | Outubro | 15h30m" style='date'></Display>
       </>
       ) : ('')
   }

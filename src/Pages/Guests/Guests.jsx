@@ -106,6 +106,9 @@ function getInformation(group){
           <Card title={getInformation('unconfirmed')} text={'Não confirmados'}>
             <BsFillCircleFill style={{color: 'Red', fontSize: '15px'}}/>
           </Card>
+          <Card title={getInformation('NotFound')} text={'Não Encontrados'}>
+            <BsFillCircleFill style={{color: 'Black', fontSize: '15px'}}/>
+          </Card>
         </section>
         <section className={styles.peoplesInviteds}>
          { inviteds.map((invited) => <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>)}

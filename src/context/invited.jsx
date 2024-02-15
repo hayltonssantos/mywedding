@@ -11,18 +11,18 @@ const InvitedProvider = ({children}) =>{
   const [age, setAge] = useState("")
   const db = getFirestore(firebaseApp)
 
-  const addGuest = async function(cod = "1", name,lastName,age = '', status){
+  const addGuest = async function(cod = "1", name,lastName,age = '0', status = 'maybe'){
     
     const id = `${name.toLowerCase()}${lastName.toLowerCase()}`
     const idWSpaces = id.split(" ").join("")
-    console.log(idWSpaces)
-
+    
     const invited_json = {
       name: name.split(" ").join(""), 
       lastName: lastName.split(" ").join(""),
       age,
       status
     }
+    
     await setDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
     await updateDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
     /* await addDoc(collection(db,'inviteds'), invited_json) */
@@ -45,7 +45,14 @@ const InvitedProvider = ({children}) =>{
       age,
       status
     }
-    await updateDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
+
+    
+    try{
+      await updateDoc(doc(db,`inviteds/${idWSpaces}`),invited_json)
+    } catch(error){
+      addGuest('0',name, lastName, age, status='NotFound')
+    }
+    
     /* await addDoc(collection(db,'inviteds'), invited_json) */
   }
     
