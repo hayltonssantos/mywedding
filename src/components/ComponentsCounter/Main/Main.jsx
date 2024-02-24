@@ -32,7 +32,7 @@ export default function Text(
     
     return enable ? (
       <section className={styles.container}>
-        <Display text='Wendding' style='wendding' color={color}/>
+        <Display text='Wedding' style='wedding' color={color}/>
         <Display text='Haylton & Camile' style='name' color={color}/>
         <Display text='Save The Date' style='titulo' color={color}/>
       </section>
