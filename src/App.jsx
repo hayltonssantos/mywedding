@@ -15,6 +15,7 @@ import {InvitedProvider} from './context/invited'
 import TheFirstYear from './Pages/TheFirstYear/TheFirstYear'
 import { QuestionsProvider } from './context/questions'
 import Questions from './Pages/Questions/Questions'
+import Presents from './Pages/Presents/Presents'
 
 function App() {
 
@@ -64,6 +65,7 @@ function App() {
                 <Route path='counter' element={<Counter/>}/>
                 <Route path='login' element={<Login/>}/>
                 <Route path='confirm' element={<Confirm/>}/>
+                <Route path='presents' element={<Presents/>}/>
                 
                 <Route element={<ProtectedRoutes />}>
                   <Route path='guests' element={<Guests/>}/>
@@ -71,9 +73,9 @@ function App() {
                   <Route path='addguests' element={<AddGuests/>}/>
                   <Route path='ourdate' element={<Ourdate/>}/>
                 </Route>
-                  <Route path='thefirsty' element={<TheFirstYear/>}/>
+                  {/* <Route path='thefirsty' element={<TheFirstYear/>}/>
                   <Route path='/questions/:id' element={<Questions/>}/>
-
+ */}
                 <Route path='/' element={<Navigate to={'/counter'}/>}/>
                 <Route path='*' element={<Navigate to={'/counter'}/>}/>
               </Routes>

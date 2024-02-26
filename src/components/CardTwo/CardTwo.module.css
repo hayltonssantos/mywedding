@@ -1,0 +1,136 @@
+.card{
+  background-color: rgb(218, 255, 231);
+
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+  width: 200px;
+  height: 300px;
+
+  margin: 10px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  box-sizing: content-box;
+  transition: 0.5s;
+
+}
+
+.card:hover{
+  width: 220px;
+  height: 310px;
+  background-color: rgb(104, 142, 117);
+  transition: 0.5s;
+}
+
+.divTitle{
+  position: relative;
+  width: 100%;
+
+  top: -15px;
+
+  height: 45%;
+  
+
+  background-position: center;
+  background-size: contain;
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  -webkit-box-shadow: 0px 70px 220px -9px rgb(222, 222, 222);
+  -moz-box-shadow: 0px 70px 220px -9px rgb(222, 222, 222);
+  box-shadow: 0px 70px 220px -9px rgb(222, 222, 222);
+
+}
+
+.title{
+  position: absolute;
+  top: 70%;
+
+
+  width: auto;
+  height: auto;
+  
+
+  min-width: 20%;
+  padding: 0px 10px 0px 10px ;
+  
+
+  transition: padding 0.2s;
+
+  font-size: 0.9em;
+}
+
+
+
+.price, .priceCoins{
+  height: 15%;
+
+  color: rgb(0, 0, 0);
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  font-size: 1.5em;
+  
+}
+
+.priceCoins{
+  display: inline;
+  font-size: 0.75em;
+}
+
+.inf{
+  position: relative;
+  
+  height: 5%;
+  width: 100%;
+
+  z-index: 0;
+
+  display: flex;
+
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 15%;
+
+}
+
+.link{
+  position: relative;
+  width: 80px;
+  height: 40px;
+  z-index: 0;
+
+  background-color: rgba(245, 222, 179, 0);
+
+  color: rgb(255, 255, 255);
+
+  border: none;
+  
+  transform-origin: top left;
+  transform: scaleX(1);
+  transition: transform 0.5s ease-in-out;
+}
+
+.link span{
+  z-index: 1;
+}
+
+
+
