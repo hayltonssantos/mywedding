@@ -36,6 +36,17 @@
     margin: 10px;
 }
 
+.addGuest{
+    display: flex;
+    justify-content: flex-end;
+
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+
+    padding: 10px;
+
+}
 
 @media screen and (max-width:480px) {
     .cards{

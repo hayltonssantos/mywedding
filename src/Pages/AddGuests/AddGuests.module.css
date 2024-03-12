@@ -1,5 +1,6 @@
 .header{
   width: 100%;
+  padding-top: 40px;
 }
 
 .grid{
@@ -9,6 +10,13 @@
   flex-basis: 30%;
   align-items: center;
 
+  justify-content: center;
+}
+
+.alert{
+  display: flex;
+  position: absolute;
+  top:0px;
   justify-content: center;
 }
 
@@ -26,4 +34,24 @@
 
   text-align: center;
   font-size: 1.1rem;
+}
+
+.boxs{
+  display: flex;
+}
+
+.ageBox, .statusBox{
+  padding: 10px;
+}
+
+.status, .age{
+  display: flex;
+  width: 120px;
+  height: 50px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  padding: 10px;
 }

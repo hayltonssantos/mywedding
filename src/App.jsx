@@ -16,6 +16,8 @@ import TheFirstYear from './Pages/TheFirstYear/TheFirstYear'
 import { QuestionsProvider } from './context/questions'
 import Questions from './Pages/Questions/Questions'
 import Presents from './Pages/Presents/Presents'
+import MbWay from './Pages/MbWay/MbWay'
+import GoogleDriveUploader from './Pages/Upload/Upload'
 
 function App() {
 
@@ -66,6 +68,8 @@ function App() {
                 <Route path='login' element={<Login/>}/>
                 <Route path='confirm' element={<Confirm/>}/>
                 <Route path='presents' element={<Presents/>}/>
+                <Route path='mbway' element={<MbWay/>}/>
+                <Route path='upload' element={<GoogleDriveUploader/>}/>
                 
                 <Route element={<ProtectedRoutes />}>
                   <Route path='guests' element={<Guests/>}/>

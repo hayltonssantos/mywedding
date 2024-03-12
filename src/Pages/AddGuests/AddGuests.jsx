@@ -62,58 +62,65 @@ export default function AddGuests() {
   return (
     <div className='App'>
       <div className={styles.grid}>
-        {showAlert && <AlertDiv text={'Success'} />}
+        <div className={styles.alert}>
+          {showAlert && <AlertDiv text={'Success'} />}
+        </div>
         <header className={styles.header}>
           <h1 className={styles.title}>Add Guests</h1>
         </header>
-        <div>
+        <div onClick={()=>setShowAlert(false)}>
           <Input type='text' onChange={setName} placeholder={'Name'} value={capitalizeFirstLetter(name)} />
         </div>
         <div>
           <Input type='text' onChange={setLastName} placeholder={'Last Name'} value={capitalizeFirstLetter(lastName)} />
         </div>
-        <div className={styles.ageBox}>
-          <div>
-            <label htmlFor='ages'>Age </label>
-            <select
-              className={styles.age}
-              onChange={(e) => setAge(e.target.value)}
-              name='ages'
-              id='ages'
-              value={age}
-            >
-              {Ages.map((age) => (
-                <option key={age.id} value={age.type}>
-                  {age.type.toUpperCase()}
-                </option>
-              ))}
-            </select>
+        <div className={styles.boxs}>
+          <div className={styles.ageBox}>
+            <div>
+              <label htmlFor='ages'>Age </label>
+              <select
+                className={styles.age}
+                onChange={(e) => setAge(e.target.value)}
+                name='ages'
+                id='ages'
+                value={age}
+              >
+                {Ages.map((age) => (
+                  <option key={age.id} value={age.type}>
+                    {age.type.toUpperCase()}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
-        </div>
-        <div className={styles.statusBox}>
-          <div>
-            <label htmlFor='status'>Status </label>
-            <select
-              className={styles.status}
-              onChange={(e) => setStatus(e.target.value)}
-              name='status'
-              id='status'
-              value={status}
-            >
-              {Status.map((stt) => (
-                <option key={stt.id} value={stt.type}>
-                  {stt.type.toUpperCase()}
-                </option>
-              ))}
-            </select>
+          <div className={styles.statusBox}>
+            <div>
+              <label htmlFor='status'>Status </label>
+              <select
+                className={styles.status}
+                onChange={(e) => setStatus(e.target.value)}
+                name='status'
+                id='status'
+                value={status}
+              >
+                {Status.map((stt) => (
+                  <option key={stt.id} value={stt.type}>
+                    {stt.type.toUpperCase()}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
         </div>
         <div>
+          <button>
+            <a href="/guests">Back</a>
+          </button>
           <button onClick={(e) => save('0', capitalizeFirstLetter(name), capitalizeFirstLetter(lastName), age.toLowerCase(), status.toLowerCase())}>Add</button>
           <button
             onClick={(e) => save('1', capitalizeFirstLetter(name), capitalizeFirstLetter(lastName), age.toLowerCase(), status.toLowerCase())}
           >
-            Add and continue
+            Add +1
           </button>
         </div>
       </div>

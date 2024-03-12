@@ -1,5 +1,6 @@
 .card{
-  background-color: rgb(218, 255, 231);
+  background-color: rgb(248, 255, 250);
+  color: rgb(50, 50, 50);
 
   position: relative;
 
@@ -11,7 +12,7 @@
   align-items: center;
 
   width: 200px;
-  height: 300px;
+  height: 330px;
 
   margin: 10px;
 
@@ -22,12 +23,15 @@
   box-sizing: content-box;
   transition: 0.5s;
 
+  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
+-moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
+box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
+
 }
 
 .card:hover{
-  width: 220px;
-  height: 310px;
-  background-color: rgb(104, 142, 117);
+  width: 210px;
+  height: 340px;
   transition: 0.5s;
 }
 
@@ -35,9 +39,11 @@
   position: relative;
   width: 100%;
 
-  top: -15px;
+  top: -35px;
 
   height: 45%;
+
+  border-bottom: 3px solid white ;
   
 
   background-position: center;
@@ -48,20 +54,16 @@
   justify-content: center;
   align-items: center;
   
-  -webkit-box-shadow: 0px 70px 220px -9px rgb(222, 222, 222);
-  -moz-box-shadow: 0px 70px 220px -9px rgb(222, 222, 222);
-  box-shadow: 0px 70px 220px -9px rgb(222, 222, 222);
-
+ 
 }
 
 .title{
   position: absolute;
-  top: 70%;
+  top: 90%;
 
 
   width: auto;
   height: auto;
-  
 
   min-width: 20%;
   padding: 0px 10px 0px 10px ;
@@ -75,9 +77,8 @@
 
 
 .price, .priceCoins{
-  height: 15%;
 
-  color: rgb(0, 0, 0);
+ 
   box-sizing: border-box;
 
   display: flex;
@@ -97,8 +98,13 @@
 
 .inf{
   position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+
+
   
-  height: 5%;
+  height: 25%;
   width: 100%;
 
   z-index: 0;
@@ -126,6 +132,25 @@
   transform-origin: top left;
   transform: scaleX(1);
   transition: transform 0.5s ease-in-out;
+}
+
+.btnPresents{
+  background: none;
+  box-shadow: none;
+  border: none;
+
+  background-color: beige;
+
+  color: black;
+}
+.btnPresents:hover{
+  background: none;
+  box-shadow: none;
+  border: none;
+
+  background-color: rgb(203, 203, 149);
+
+  color: black;
 }
 
 .link span{
