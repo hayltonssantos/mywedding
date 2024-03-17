@@ -6,7 +6,8 @@
     justify-content: center;
     align-content: center;
     
-    background-color: #8c3f0d;
+    background: linear-gradient(45deg, #8c3f0d 30%, #923c04 100%);
+    
     box-shadow: 38px 38px 112px 0px rgba(255, 255, 255, 0.368);
 
     margin: 30px;

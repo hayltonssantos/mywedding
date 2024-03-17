@@ -1,10 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@1,300&display=swap');
+:root{
+    --primaryFont: 'Cookie';
+    --secundaryFont : 'Zilla Slab', serif;
+    --thirdFont: 'Dancing Script'
+}
+
 .header{
-  
+  background: linear-gradient(45deg, rgb(25, 89, 2) 30%, rgba(50,93,65,1) 100%);
+    
+  font-size: 25px;
+  font-family: var(--primaryFont);
+
+  width: 100%;
+  justify-content: space-between;
+  border-bottom: 1px solid whitesmoke;
+  color: whitesmoke;
+  padding: 5px;
 }
 
 .cards{
   display: flex;
   flex-wrap: wrap;
+
+  font-size: 22px;
+  font-family: var(--secundaryFont);
 
   margin: auto;
 
@@ -16,11 +36,12 @@
   display: flex;
   flex-wrap: wrap;
   width: auto;
-  justify-content: flex-end;
-  background-color: aqua;
+  justify-content: center;
 }
 
 .container section{
   justify-content: space-around;
+  padding: 10px;
+  box-sizing: border-box;
   
 }

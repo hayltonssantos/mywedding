@@ -56,6 +56,7 @@ const changePhoto = () =>{
         <span className={styles.price}>
               {price}<span className={styles.priceCoins}>,00</span>
             </span>
+      <div className={styles.btnbtn}>
         <a href={link} target='_self'>
           <button className={styles.btnPresents}>
             <span>
@@ -63,6 +64,7 @@ const changePhoto = () =>{
             </span>
           </button>
         </a>
+      </div>
       </div>
     </div>
   );

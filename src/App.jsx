@@ -18,6 +18,7 @@ import Questions from './Pages/Questions/Questions'
 import Presents from './Pages/Presents/Presents'
 import MbWay from './Pages/MbWay/MbWay'
 import GoogleDriveUploader from './Pages/Upload/Upload'
+import { ConfigsProvider } from './context/configs'
 
 function App() {
 
@@ -59,6 +60,7 @@ function App() {
       </> 
     ) : (
     <>
+    <ConfigsProvider>
       <InvitedProvider>
         <UserProvider>
           <QuestionsProvider>
@@ -79,7 +81,7 @@ function App() {
                 </Route>
                   {/* <Route path='thefirsty' element={<TheFirstYear/>}/>
                   <Route path='/questions/:id' element={<Questions/>}/>
- */}
+                */}
                 <Route path='/' element={<Navigate to={'/counter'}/>}/>
                 <Route path='*' element={<Navigate to={'/counter'}/>}/>
               </Routes>
@@ -87,6 +89,7 @@ function App() {
           </QuestionsProvider>
         </UserProvider>
       </InvitedProvider>
+    </ConfigsProvider>
     </>
   )
 }

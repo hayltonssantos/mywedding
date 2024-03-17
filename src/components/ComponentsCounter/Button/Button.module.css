@@ -30,7 +30,9 @@
     justify-content: center;
     align-content: center;
     
-    background-color: rgba(50,93,65,1);
+
+    background: linear-gradient(45deg, rgb(25, 89, 2) 30%, rgba(50,93,65,1) 100%);
+    
     box-shadow: 38px 38px 112px 0px rgba(0,0,0,0.75);
 
     width: 100px;

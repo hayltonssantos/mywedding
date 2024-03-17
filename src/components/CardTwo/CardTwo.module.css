@@ -11,8 +11,8 @@
   justify-content: center;
   align-items: center;
 
-  width: 200px;
-  height: 330px;
+  width: 220px;
+  height: 430px;
 
   margin: 10px;
 
@@ -30,8 +30,8 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
 }
 
 .card:hover{
-  width: 210px;
-  height: 340px;
+  width: 226px;
+  height: 440px;
   transition: 0.5s;
 }
 
@@ -78,9 +78,6 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
 
 .price, .priceCoins{
 
- 
-  box-sizing: border-box;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -102,9 +99,7 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
   display: flex;
   flex-wrap: wrap;
 
-
-  
-  height: 25%;
+  height: auto;
   width: 100%;
 
   z-index: 0;
@@ -113,7 +108,6 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
 
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 15%;
 
 }
 
@@ -156,6 +150,34 @@ box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
 .link span{
   z-index: 1;
 }
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+.card{
+  width: 175px;
+  height: 470px;
+}
+
+.title{
+  font-size: 0.8em;
+}
+  
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .card{
+    width: 175px;
+    height: 470px;
+  }
+  
+  .title{
+    font-size: 0.8em;
+  }
+}
+
+
 
 
 

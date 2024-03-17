@@ -7,6 +7,8 @@ import { UserContext } from '../../context/user';
 
 import { BiLogOut } from "react-icons/bi";
 import { FcInvite } from "react-icons/fc";
+import { CiClock1 } from "react-icons/ci";
+
 
 
 function Admin() {
@@ -25,7 +27,10 @@ function Admin() {
         <Button link={'guests'} navigate='/guests' text={'Guests'}>
           <FcInvite style={{color: 'white', fontSize: '100px'}}/>
         </Button>
-        <Button/>
+
+        <Button link={'counter'} navigate='/counter' text={'Counter'}>
+          <CiClock1 style={{color: 'white', fontSize: '100px'}}/>
+        </Button>
       </div>
     </div>
   );

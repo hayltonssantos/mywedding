@@ -8,12 +8,14 @@
 .header{
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(140, 63, 13);
+    background: linear-gradient(45deg, rgb(140, 63, 13) 30%, rgb(83, 37, 7) 100%);
+    
     width: 100%;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 1px solid whitesmoke;
     color: whitesmoke;
-}
+    padding: 20px;
+  }
 
 .title{
     padding-left: 10px;
@@ -46,6 +48,16 @@
 
     padding: 10px;
 
+}
+
+.prices, .status{
+    width: 100%;
+    padding: 10px;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around ;
+    align-items: center;
 }
 
 @media screen and (max-width:480px) {
