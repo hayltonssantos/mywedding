@@ -56,10 +56,10 @@
     position: relative;
     width: 100%;
     
-    color: rgb(25, 89, 2);
+    color: rgb(19, 67, 0);
     
     /* color: #8d2a17; */
-    text-shadow: 0.1em 0.1em 0.2em rgb(255, 255, 255); 
+    text-shadow: 0.1em 0.1em 0.5em rgb(255, 255, 255); 
     
     font-size: 50px;
     font-family: var(--primaryFont) ;
@@ -73,7 +73,7 @@
 }
 
 .wedding{
-    font-size: 40px;
+    font-size: 45px;
     margin-top: 40px;
     margin-bottom: -20px;
     left: -2em;

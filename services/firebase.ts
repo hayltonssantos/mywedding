@@ -7,17 +7,15 @@ import { getAnalytics } from "firebase/analytics";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBhTx_jyQ9XXDXbwN_8G3StDaWk8ixpOrU",
-  authDomain: "mywendding.web.app",
-  projectId: "mywendding",
-  storageBucket: "mywendding.appspot.com",
-  messagingSenderId: "297404197510",
-  appId: "1:297404197510:web:51e391cdc5fcdca56a7f07",
-  measurementId: "G-66KL1Q1VMH"
+  apiKey: "AIzaSyCeBPQrv1f0yssE_9r7VPwMHIMoUDrP6Ag",
+  authDomain: "burguerhouse-78fdf.firebaseapp.com",
+  projectId: "burguerhouse-78fdf",
+  storageBucket: "burguerhouse-78fdf.appspot.com",
+  messagingSenderId: "503732480439",
+  appId: "1:503732480439:web:fc7e2f4fbc00c02d18a032",
+  measurementId: "G-2FQMEBCJ3V"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const firebaseApp = initializeApp(firebaseConfig);
-export default firebaseApp;
