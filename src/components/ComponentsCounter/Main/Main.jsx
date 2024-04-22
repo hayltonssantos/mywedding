@@ -15,12 +15,12 @@ export default function Text(
                                 enableDate = true, 
                                 enableBottom = true}
   ) {
-  const [day, hour, minute, second] = useCountdown('2024-10-12')
+  const [day, hour, minute, second] = useCountdown('2024-10-26')
   /* const link = "https://api.whatsapp.com/send/?phone=5521976618713&text=Ol%C3%A1%2C+confirmo+minha+presen%C3%A7a+na+Festa+da+Jennyni.+Dia+02+de+Junho%2C+%C3%A0s+21h.+Nome+Completo%3A&type=phone_number&app_absent=0"
    */
   const link = "/confirm"
   const sug = '/presents'
-  const mapa = 'https://goo.gl/maps/S2ykJjg2UxoPWTmd8'
+  const mapa = 'https://maps.app.goo.gl/EyZkPCVXziPL1Eip9'
 
 
   const [isHover, setIsHover] = useState();
@@ -47,8 +47,10 @@ export default function Text(
       <>
         <PreCard numberPhoto={1} onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}>
-          <Display style={isHover ? 'text:hover' : 'text'} text={day} isHoverSet={isHover}/>
-          <Display style='nameBox' text='Days' isHoverSet={isHover}/>
+            <div style={isHover ? {display:'none', transition: '0.5s', width:'100%'} : {width:'100%'} } onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+              <Display style={isHover ? 'text:hover' : 'text'} text={day} isHoverSet={isHover}/>
+              <Display style='nameBox' text='Days' isHoverSet={isHover}/>
+            </div>
         </PreCard>
         <PreCard numberPhoto={2}>
           <Display style='text' text={hour}/>
@@ -85,13 +87,13 @@ export default function Text(
                         style='textDate'>              
           </Display>
         </div>
-        <Button link={mapa} text='Local' style='nameBox'>
+        <Button link={mapa} text='Local' style='nameBox' textColor='rgb(57, 58, 57)'>
             <FaMapPin style={{color: 'white', fontSize: '50px'}}/>
         </Button>
-        <Button link={link} text='Confirmar Presença' style='nameBox' target='_self'>
+        <Button link={link} text='Confirmar Presença' style='nameBox' target='_self' textColor='rgb(57, 58, 57)'>
             <GiConfirmed style={{color: 'white', fontSize: '50px'}}/>
         </Button>
-        <Button link={sug} text='Sugestão de presente' style='nameBox' target='_self'>
+        <Button link={sug} text='Sugestão de presente' style='nameBox' target='_self' textColor='rgb(57, 58, 57)'>
             <GiPresent style={{color: 'white', fontSize: '50px'}}/>
         </Button>
      
@@ -104,7 +106,7 @@ export default function Text(
     return enable ?
       (
       <>
-        <Display text="12 | Outubro | 15h30m" style='date'></Display>
+        <Display text="26 | Outubro | 15h" style='date'></Display>
       </>
       ) : ('')
   }

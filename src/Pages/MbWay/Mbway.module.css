@@ -1,0 +1,77 @@
+.infor {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  font-family: var(--secundaryFont);
+}
+
+.paypal, .others {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+}
+
+.paypal{
+  align-items: center;
+  
+}
+
+.paypal h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+.paypal img {
+  width: 300px;
+  height: 300px;
+  height: auto;
+  margin-right: 10px; /* Adicionei um pequeno espaço entre o texto e a imagem */
+  border-radius: 10px;
+}
+
+.others {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.divP {
+  display: flex;
+  align-items: center;
+}
+.others h1{
+  font-size: 1.8em;
+}
+
+.others p{
+  font-size: 1.2em;
+}
+.others h1, .others p {
+  margin: 0; /* Removendo margens para ajustar o layout */
+  margin-right: 10px; /* Adicionando um pequeno espaço entre o texto e a imagem */
+}
+
+.butt{
+  display: flex;
+  margin: 0;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.texts{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  line-height: 0px;
+  padding: 8px;
+}

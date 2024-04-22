@@ -28,6 +28,7 @@ export default function AddGuests() {
     { 'id': 2, 'type': 'maybe' },
     { 'id': 3, 'type': 'confirmed' },
     { 'id': 4, 'type': 'unconfirmed' },
+    { 'id': 5, 'type': 'remove' },
   ];
 
   const [showAlert, setShowAlert] = useState(false);
@@ -118,7 +119,7 @@ export default function AddGuests() {
           </button>
           <button onClick={(e) => save('0', capitalizeFirstLetter(name), capitalizeFirstLetter(lastName), age.toLowerCase(), status.toLowerCase())}>Add</button>
           <button
-            onClick={(e) => save('1', capitalizeFirstLetter(name), capitalizeFirstLetter(lastName), age.toLowerCase(), status.toLowerCase())}
+            onClick={(e) => save('1', capitalizeFirstLetter(name), capitalizeFirstLetter(lastName), age.toLowerCase(), status === 'notfound' ? 'NotFound' : status.toLowerCase())}
           >
             Add +1
           </button>

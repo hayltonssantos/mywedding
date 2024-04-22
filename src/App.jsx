@@ -19,6 +19,7 @@ import Presents from './Pages/Presents/Presents'
 import MbWay from './Pages/MbWay/MbWay'
 import GoogleDriveUploader from './Pages/Upload/Upload'
 import { ConfigsProvider } from './context/configs'
+import { MoreInvitedProvider } from './context/moreInvited'
 
 function App() {
 
@@ -61,34 +62,36 @@ function App() {
     ) : (
     <>
     <ConfigsProvider>
-      <InvitedProvider>
-        <UserProvider>
-          <QuestionsProvider>
-            <BrowserRouter>
-              <Routes>
-                <Route path='counter' element={<Counter/>}/>
-                <Route path='login' element={<Login/>}/>
-                <Route path='confirm' element={<Confirm/>}/>
-                <Route path='presents' element={<Presents/>}/>
-                <Route path='mbway' element={<MbWay/>}/>
-                <Route path='upload' element={<GoogleDriveUploader/>}/>
-                
-                <Route element={<ProtectedRoutes />}>
-                  <Route path='guests' element={<Guests/>}/>
-                  <Route path='admin' element={<Admin/>}/>
-                  <Route path='addguests' element={<AddGuests/>}/>
-                  <Route path='ourdate' element={<Ourdate/>}/>
-                </Route>
-                  {/* <Route path='thefirsty' element={<TheFirstYear/>}/>
-                  <Route path='/questions/:id' element={<Questions/>}/>
-                */}
-                <Route path='/' element={<Navigate to={'/counter'}/>}/>
-                <Route path='*' element={<Navigate to={'/counter'}/>}/>
-              </Routes>
-            </BrowserRouter>
-          </QuestionsProvider>
-        </UserProvider>
-      </InvitedProvider>
+      <MoreInvitedProvider>
+        <InvitedProvider>
+          <UserProvider>
+            <QuestionsProvider>
+              <BrowserRouter>
+                <Routes>
+                  <Route path='counter' element={<Counter/>}/>
+                  <Route path='login' element={<Login/>}/>
+                  <Route path='confirm' element={<Confirm/>}/>
+                  <Route path='presents' element={<Presents/>}/>
+                  <Route path='mbway' element={<MbWay/>}/>
+                  <Route path='upload' element={<GoogleDriveUploader/>}/>
+                  
+                  <Route element={<ProtectedRoutes />}>
+                    <Route path='guests' element={<Guests/>}/>
+                    <Route path='admin' element={<Admin/>}/>
+                    <Route path='addguests' element={<AddGuests/>}/>
+                    <Route path='ourdate' element={<Ourdate/>}/>
+                  </Route>
+                    {/* <Route path='thefirsty' element={<TheFirstYear/>}/>
+                    <Route path='/questions/:id' element={<Questions/>}/>
+                  */}
+                  <Route path='/' element={<Navigate to={'/counter'}/>}/>
+                  <Route path='*' element={<Navigate to={'/counter'}/>}/>
+                </Routes>
+              </BrowserRouter>
+            </QuestionsProvider>
+          </UserProvider>
+        </InvitedProvider>
+      </MoreInvitedProvider>
     </ConfigsProvider>
     </>
   )

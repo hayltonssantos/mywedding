@@ -29,6 +29,7 @@ export default function Guests() {
   const [listConfirm, setListConfirm] = useState(false)
   const [listUnconfirm, setListUnconfirmed] = useState(false)
   const [listNotFound, setListNotFound] = useState(false)
+  const [listRemove, setListRemove] = useState(false)
 
 function getInformation(group){
   let adult = 0
@@ -37,6 +38,7 @@ function getInformation(group){
   let unconfirmed = 0
   let maybe = 0
   let NotFound = 0
+  let remove = 0
   inviteds.map((invited) =>{
     if (invited.age === 'adult') adult = adult + 1
     if (invited.age === 'child') child = child + 1
@@ -44,11 +46,13 @@ function getInformation(group){
     if (invited.status === 'unconfirmed') unconfirmed = unconfirmed + 1
     if (invited.status === 'maybe') maybe = maybe + 1
     if (invited.status === 'NotFound') NotFound = NotFound + 1
+    if (invited.status === 'remove') remove = remove + 1
   })
   if (group === 'adult') return adult
   if (group === 'child') return child
   if (group === 'confirmed') return confirmed
   if (group === 'NotFound') return NotFound
+  if (group === 'remove') return remove
   if (group === 'unconfirmed') return unconfirmed + maybe
 }
   
@@ -118,6 +122,13 @@ function getInformation(group){
        </section>
       )
     }
+    if (listRemove === true){
+      return(
+        <section className={styles.peoplesInviteds}>
+        {inviteds.map((invited) => invited.status === 'remove' ? <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>:'')}
+       </section>
+      )
+    }
   }
 
   const changeList = (name) => {
@@ -168,6 +179,16 @@ function getInformation(group){
         setListNotFound(true)
         break
       }
+      case 'remove':{
+        setListAll(false)
+        setListChild(false)
+        setListAdult(false)
+        setListConfirm(false)
+        setListUnconfirmed(false)
+        setListNotFound(false)
+        setListRemove(true)
+        break
+      }
     }
   }
   return (
@@ -215,6 +236,11 @@ function getInformation(group){
             <section onClick={() =>{changeList('NotFound')}}>
               <Card title={getInformation('NotFound')} text={'Não Encontrados'}>
                 <BsFillCircleFill style={{color: 'Black', fontSize: '15px'}}/>
+              </Card>
+            </section>
+            <section onClick={() =>{changeList('remove')}}>
+              <Card title={getInformation('remove')} text={'Removidos'}>
+                <BsFillCircleFill style={{color: 'Purple', fontSize: '15px'}}/>
               </Card>
             </section>
           </section>

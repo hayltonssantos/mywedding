@@ -1,180 +1,139 @@
-.card{
-  background-color: rgb(248, 255, 250);
-  color: rgb(50, 50, 50);
+@import url("https://fonts.googleapis.com/css2?family=Istok+Web:wght@400;700&display=swap");
+section{
+  margin: 0;
+  padding: 0;
+}
 
+.card {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
   position: relative;
+  width: 220px;
+  height: 320px;
+  background: rgb(19, 67, 0);
+  border-radius: 20px;
+  margin: 10px;
+  overflow: hidden;
+  
+  
+}
 
+.card::before {
+  content: "HC";
+  position: absolute;
+  top: -50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(11, 37, 1, 0.638);
+  transform: skewY(345deg);
+  transition: 0.5s;
+  
+}
+
+.card:hover::before {
+  top: -70%;
+  transform: skewY(390deg);
+  
+}
+
+.card::after {
+  content: "HC";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-weight: 600;
+  font-size: 3em;
+  color: rgba(11, 37, 1, 0.46);
+  
+}
+
+.card .imgBox {
+  position: relative;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-
-  text-align: center;
   justify-content: center;
   align-items: center;
+  padding-top: 20px;
+  z-index: 2;
+  
+}
+/*
+.card .imgBox img {
+    max-width: 100%;
+    
+    transition: .5s;
+}
 
-  width: 220px;
-  height: 430px;
+.card:hover .imgBox img {
+    max-width: 50%;
+      
+}
+*/
+.card .contentBox {
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
 
-  margin: 10px;
-
-  overflow: hidden;
-
-  border-radius: 12px;
-
-  box-sizing: content-box;
-  transition: 0.5s;
-
-  -webkit-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
--moz-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
-box-shadow: 2px 2px 3px 0px rgba(0,0,0,0.49);
+.card .contentBox h3 {
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
 }
 
-.card:hover{
-  width: 226px;
-  height: 440px;
+.card .contentBox .price {
+  font-size: 24px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+}
+
+.card .contentBox .buy {
+  position: relative;
+  top: 100px;
+  opacity: 0;
+  padding: 10px 30px;
+  margin-top: 15px;
+  color: white;
+  text-decoration: none;
+  background: #8d2a17;
+  border-radius: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: 0.5s;
+
+}
+
+.card:hover .contentBox .buy {
+  top: 0;
+  opacity: 1;
+
+  
+}
+
+.mouse {
+  
+  position: relative;
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+
 }
 
 .divTitle{
-  position: relative;
-  width: 100%;
-
-  top: -35px;
-
-  height: 45%;
-
-  border-bottom: 3px solid white ;
-  
-
-  background-position: center;
-  background-size: contain;
-
-
   display: flex;
   justify-content: center;
-  align-items: center;
-  
- 
-}
+  margin-top: 10px;
 
-.title{
-  position: absolute;
-  top: 90%;
-
-
-  width: auto;
-  height: auto;
-
-  min-width: 20%;
-  padding: 0px 10px 0px 10px ;
-  
-
-  transition: padding 0.2s;
-
-  font-size: 0.9em;
-}
-
-
-
-.price, .priceCoins{
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-
-  font-size: 1.5em;
-  
-}
-
-.priceCoins{
-  display: inline;
-  font-size: 0.75em;
-}
-
-.inf{
-  position: relative;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  height: auto;
-  width: 100%;
-
-  z-index: 0;
-
-  display: flex;
-
-  justify-content: space-around;
-  align-items: center;
-
-}
-
-.link{
-  position: relative;
-  width: 80px;
-  height: 40px;
-  z-index: 0;
-
-  background-color: rgba(245, 222, 179, 0);
-
-  color: rgb(255, 255, 255);
-
-  border: none;
-  
-  transform-origin: top left;
-  transform: scaleX(1);
-  transition: transform 0.5s ease-in-out;
-}
-
-.btnPresents{
-  background: none;
-  box-shadow: none;
-  border: none;
-
-  background-color: beige;
-
-  color: black;
-}
-.btnPresents:hover{
-  background: none;
-  box-shadow: none;
-  border: none;
-
-  background-color: rgb(203, 203, 149);
-
-  color: black;
-}
-
-.link span{
-  z-index: 1;
-}
-
-
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-.card{
-  width: 175px;
-  height: 470px;
-}
-
-.title{
-  font-size: 0.8em;
-}
-  
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .card{
-    width: 175px;
-    height: 470px;
-  }
-  
-  .title{
-    font-size: 0.8em;
-  }
 }
 
 

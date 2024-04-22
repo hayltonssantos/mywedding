@@ -15,6 +15,7 @@ export default function GuestsInvited({name = 'null', lastName = 'null', status 
         case 'confirmed': return 'green'
         case 'unconfirmed': return 'red'
         case 'maybe': return 'darkOrange'
+        case 'remove': return 'purple'
     }
    }  
   

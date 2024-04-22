@@ -6,17 +6,32 @@
     --thirdFont: 'Dancing Script'
 }
 
-.header{
-  background: linear-gradient(45deg, rgb(25, 89, 2) 30%, rgba(50,93,65,1) 100%);
-    
-  font-size: 25px;
-  font-family: var(--primaryFont);
-
+.header {
+  background: url('../../assets/newflowers2.png');
+  background-position: top center;
+  background-repeat: repeat-x;
+  background-size: contain;
+  
+  
   width: 100%;
-  justify-content: space-between;
-  border-bottom: 1px solid whitesmoke;
-  color: whitesmoke;
+  height: auto;
+  justify-content: center;
   padding: 5px;
+
+  
+}
+
+
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  
+  font-size: 4em;
+  font-family: var(--primaryFont);
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  align-items: center;
+  text-shadow: 2px 2px 4px rgb(69, 38, 0);
 }
 
 .cards{
