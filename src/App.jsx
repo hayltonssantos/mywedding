@@ -20,6 +20,7 @@ import MbWay from './Pages/MbWay/MbWay'
 import GoogleDriveUploader from './Pages/Upload/Upload'
 import { ConfigsProvider } from './context/configs'
 import { MoreInvitedProvider } from './context/moreInvited'
+import ChaDePanela from './Pages/ChaDePanela/ChaDePanela'
 
 function App() {
 
@@ -74,6 +75,7 @@ function App() {
                   <Route path='presents' element={<Presents/>}/>
                   <Route path='mbway' element={<MbWay/>}/>
                   <Route path='upload' element={<GoogleDriveUploader/>}/>
+                  {/*<Route path='chadecozinha' element={<ChaDePanela/>}/> */}
                   
                   <Route element={<ProtectedRoutes />}>
                     <Route path='guests' element={<Guests/>}/>
