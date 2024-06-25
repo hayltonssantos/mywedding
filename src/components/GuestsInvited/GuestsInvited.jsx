@@ -24,6 +24,7 @@ export default function GuestsInvited({name = 'null', lastName = 'null', status 
     setSearchParams({ q: searchId });
     navigate(`/addguests?q=${encodeURIComponent(searchId)}`);
   }
+  
   return (
     <div className={style.container}>
       <div className={style.info}>
