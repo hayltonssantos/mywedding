@@ -33,7 +33,7 @@ function Confirm() {
  const [moreInvited, setMoreInvited] = useState([])
  const {moreInvitedBtn,setMoreInvitedBtn} = useMoreInvited(); // Correção aqui
  const [status, setStatus] = useState("")
- const linkWpp = `https://api.whatsapp.com/send?phone=351964337343&text=Ol%C3%A1%2C%20Eu:%20${name}%20${lastName}%20${status === 'Não confirmado' ? 'não':''}%20confirmo%20minha%20presen%C3%A7a%20no%20Casamento%20de%20Haylton%20e%20Camile.%20Dia%2026%20de%20Outubro%2C%20%C3%A0s%2015%3A30h.`
+ const linkWpp = `https://api.whatsapp.com/send?phone=351964337343&text=Ol%C3%A1%2C%20Eu:%20${name}%20${lastName}%20${status === 'Não confirmado' ? 'não':''}%20confirmo%20minha%20presen%C3%A7a%20no%20Casamento%20de%20Haylton%20e%20Camile.%20Dia%2026%20de%20Outubro%2C%20%C3%A0s%2015%3A00h.`
  const [missRequired, setMissRequired] = useState(false)
  const [confirmation, setConfirmation] = useState(false)
  const [nameFull, setNameFull] = useState()
