@@ -30,6 +30,7 @@ export default function Guests() {
   const [listUnconfirm, setListUnconfirmed] = useState(false)
   const [listNotFound, setListNotFound] = useState(false)
   const [listRemove, setListRemove] = useState(false)
+  const [listMaybe, setListMaybe] = useState(false)
 
 function getInformation(group){
   let adult = 0
@@ -53,7 +54,8 @@ function getInformation(group){
   if (group === 'confirmed') return confirmed
   if (group === 'NotFound') return NotFound
   if (group === 'remove') return remove
-  if (group === 'unconfirmed') return unconfirmed + maybe
+  if (group === 'unconfirmed') return unconfirmed
+  if (group === 'maybe') return maybe
 }
   
   useEffect(()=>{
@@ -111,7 +113,7 @@ function getInformation(group){
     if (listUnconfirm === true){
       return(
         <section className={styles.peoplesInviteds}>
-        {inviteds.map((invited) => invited.status !== 'confirmed' ? <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>:'')}
+        {inviteds.map((invited) => invited.status === 'unconfirmed' ? <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>:'')}
        </section>
       )
     }
@@ -126,6 +128,13 @@ function getInformation(group){
       return(
         <section className={styles.peoplesInviteds}>
         {inviteds.map((invited) => invited.status === 'remove' ? <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>:'')}
+       </section>
+      )
+    }
+    if (listMaybe === true){
+      return(
+        <section className={styles.peoplesInviteds}>
+        {inviteds.map((invited) => invited.status === 'maybe' ? <GuestsInvited key={`${invited.name}${invited.lastName}`} name={invited.name} lastName={invited.lastName} status={invited.status} age={invited.age}/>:'')}
        </section>
       )
     }
@@ -189,6 +198,17 @@ function getInformation(group){
         setListRemove(true)
         break
       }
+      case 'maybe':{
+        setListAll(false)
+        setListChild(false)
+        setListAdult(false)
+        setListConfirm(false)
+        setListUnconfirmed(false)
+        setListNotFound(false)
+        setListRemove(false)
+        setListMaybe(true)
+        break
+      }
     }
   }
   return (
@@ -241,6 +261,11 @@ function getInformation(group){
             <section onClick={() =>{changeList('remove')}}>
               <Card title={getInformation('remove')} text={'Removidos'}>
                 <BsFillCircleFill style={{color: 'Purple', fontSize: '15px'}}/>
+              </Card>
+            </section>
+            <section onClick={() =>{changeList('maybe')}}>
+              <Card title={getInformation('maybe')} text={'Talvez'}>
+                <BsFillCircleFill style={{color: 'Blue', fontSize: '15px'}}/>
               </Card>
             </section>
           </section>
